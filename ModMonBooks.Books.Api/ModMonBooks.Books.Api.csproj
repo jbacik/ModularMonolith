@@ -4,5 +4,9 @@
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
+  
+  <ItemGroup>
+      <InternalsVisibleTo Include="ModMonBooks.Books.Api.Tests" />
+  </ItemGroup>
 
 </Project>
