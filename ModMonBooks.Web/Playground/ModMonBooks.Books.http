@@ -1,11 +1,5 @@
 @ModMonBooks.Web_HostAddress = http://localhost:5032
 
-GET {{ModMonBooks.Web_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
-
-
 GET {{ModMonBooks.Web_HostAddress}}/books/
 Accept: application/json
 
