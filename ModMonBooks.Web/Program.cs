@@ -1,3 +1,4 @@
+using FastEndpoints;
 using ModMonBooks.Books.Api;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,6 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddFastEndpoints();
 builder.Services.AddBookServices();
 
 var app = builder.Build();
@@ -18,6 +20,6 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.MapBookEndpoints();
+app.UseFastEndpoints();
 
 app.Run();

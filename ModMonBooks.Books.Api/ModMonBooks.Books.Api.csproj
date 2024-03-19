@@ -8,5 +8,9 @@
   <ItemGroup>
       <InternalsVisibleTo Include="ModMonBooks.Books.Api.Tests" />
   </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="FastEndpoints" Version="5.23.0" />
+  </ItemGroup>
 
 </Project>

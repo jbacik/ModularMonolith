@@ -16,15 +16,17 @@ public class ListBooksTests : IClassFixture<WebApplicationFactory<IApiMarker>>
 	[Fact]
 	public async Task GetBooks_ReturnsBooksAsync()
 	{
-		var result = await _client.GetAsync("/books");
+		var result = await _client.GetAsync("/api/books");
 		
 		result.EnsureSuccessStatusCode();
 		result.StatusCode.Should().Be(HttpStatusCode.OK);
 
-		var response = await result.Content.ReadFromJsonAsync<IEnumerable<BookResponseModel>>();
-		response!.Count().Should().Be(3);
-		response.Should().ContainSingle(b => b.Title == "The Art of Computer Programming");
-		response.Should().ContainSingle(b => b.Title == "Introduction to the Theory of Computation");
-		response.Should().ContainSingle(b => b.Title == "Introduction to Algorithms");
+		var response = await result.Content.ReadFromJsonAsync<ApiListResponse<BookResponseModel>>();
+		response!.Data.Should().NotBeNullOrEmpty();
+		response.Total.Should().Be(3);
+
+		response.Data.Should().ContainSingle(b => b.Title == "The Art of Computer Programming");
+		response.Data.Should().ContainSingle(b => b.Title == "Introduction to the Theory of Computation");
+		response.Data.Should().ContainSingle(b => b.Title == "Introduction to Algorithms");
 	}
 }
