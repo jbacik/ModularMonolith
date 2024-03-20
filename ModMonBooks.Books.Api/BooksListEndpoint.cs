@@ -13,11 +13,11 @@ public class BooksListEndpoint(IBookService bookService) : EndpointWithoutReques
 
 	public override async Task HandleAsync(CancellationToken cancellationToken = default)
 	{
-		var list = _bookService.GetBooks();
+		var list = await _bookService.GetBooksAsync();
 		var result = new ApiListResponse<BookResponseModel>
 		{
-			Data = list.ToList(),
-			Total = list.Count()
+			Data = list,
+			Total = list.Count
 		};
 
 		await SendAsync(result);

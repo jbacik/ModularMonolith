@@ -1,4 +1,5 @@
 using FastEndpoints;
+using Microsoft.EntityFrameworkCore;
 using ModMonBooks.Books.Api;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,7 +9,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddFastEndpoints();
-builder.Services.AddBookServices();
+builder.Services.AddBookServices(builder.Configuration);
 
 var app = builder.Build();
 
