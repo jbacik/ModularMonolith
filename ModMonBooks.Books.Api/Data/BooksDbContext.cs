@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ModMonBooks.Books.Api.Entities;
 
-namespace ModMonBooks.Books.Api;
+namespace ModMonBooks.Books.Api.Data;
 public class BooksDbContext : DbContext
 {
 	internal virtual DbSet<Book> Books { get; set; } = default!;
@@ -36,19 +36,19 @@ public class BooksDbContext : DbContext
 		"Donald Knuth",
 		24.99m);
 
-		private static Book IntroToComputerTheory = new Book(
-		Guid.Parse("022c638f-105f-42aa-9594-ffdd29def50b"),
-		"978-0-201-89683-4",
-		"Introduction to the Theory of Computation",
-		"Michael Sipser",
-		32.99m);
+	private static Book IntroToComputerTheory = new Book(
+	Guid.Parse("022c638f-105f-42aa-9594-ffdd29def50b"),
+	"978-0-201-89683-4",
+	"Introduction to the Theory of Computation",
+	"Michael Sipser",
+	32.99m);
 
-		private static Book IntroToAlgorithms = new Book(
-			Guid.Parse("540adc5c-67b6-4d99-b484-312d26b80914"),
-			"978-0-262-03384-8",
-			"Introduction to Algorithms",
-			"Thomas H. Cormen",
-			59.77m);
+	private static Book IntroToAlgorithms = new Book(
+		Guid.Parse("540adc5c-67b6-4d99-b484-312d26b80914"),
+		"978-0-262-03384-8",
+		"Introduction to Algorithms",
+		"Thomas H. Cormen",
+		59.77m);
 	#endregion
 }
 

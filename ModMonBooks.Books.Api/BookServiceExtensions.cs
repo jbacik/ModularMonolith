@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using ModMonBooks.Books.Api.Data;
 
 namespace ModMonBooks.Books.Api;
 public static class BookServiceExtensions

@@ -4,13 +4,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ModMonBooks.Books.Api;
 
 #nullable disable
 
 namespace ModMonBooks.Books.Api.Data.Migrations
 {
-    [DbContext(typeof(BooksDbContext))]
+	[DbContext(typeof(BooksDbContext))]
     partial class BooksDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

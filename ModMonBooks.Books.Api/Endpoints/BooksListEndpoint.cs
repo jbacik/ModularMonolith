@@ -1,6 +1,6 @@
 ﻿using FastEndpoints;
 
-namespace ModMonBooks.Books.Api;
+namespace ModMonBooks.Books.Api.Endpoints;
 public class BooksListEndpoint(IBookService bookService) : EndpointWithoutRequest<ApiListResponse<BookResponseModel>>
 {
 	private readonly IBookService _bookService = bookService;

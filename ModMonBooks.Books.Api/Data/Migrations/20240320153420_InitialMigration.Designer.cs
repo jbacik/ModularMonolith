@@ -5,13 +5,12 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using ModMonBooks.Books.Api;
 
 #nullable disable
 
 namespace ModMonBooks.Books.Api.Data.Migrations
 {
-    [DbContext(typeof(BooksDbContext))]
+	[DbContext(typeof(BooksDbContext))]
     [Migration("20240320153420_InitialMigration")]
     partial class InitialMigration
     {
